@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+    	DB::table('users')->insert([
+    		'nik' => '3506257005670001',
+    		'name' => 'Admin',
+    		'email' => 'admin@gmail.com',
+    		'password' => Hash::make('admin'),
+    		'level' => '99',
+    	]);
+
+    	DB::table('users')->insert([
+    		'nik' => '3506257005670002',
+    		'name' => 'User',
+    		'email' => 'user@gmail.com',
+    		'password' => Hash::make('user'),
+    		'level' => '1',
+    	]);
+
+    }
+}
